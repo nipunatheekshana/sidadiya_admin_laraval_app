@@ -1,0 +1,36 @@
+
+.logo{
+    border-radius: 10px;
+    box-shadow: 2px 5px 15px rgba(0,0,0,0.3);
+}
+.fa-user , .fa-key{
+    color: #00BFA6;
+}
+.uk-input{
+    border-width: 2px;
+    border-color: #ffffff;
+    border-bottom-color: rgba(0, 191, 166, 0.596);
+}
+.uk-input:focus{
+    border-width: 2px;
+    border-color: #ffffff;
+    border-bottom-color: #00BFA6;
+}
+
+.loginbtn{
+    border-radius: 5em;
+    border: 2px solid #00BFA6;
+    color: #00BFA6;
+    font-weight: 500;
+}
+.loginbtn:hover{
+    background-color: #00BFA6;
+    border: 2px solid #00BFA6;
+    color: #ffffff;
+}
+.loginbtn:active{
+    border-radius: 5em;
+    border: 2px solid #00BFA6;
+    color: #00BFA6;
+    font-weight: 500;
+}
