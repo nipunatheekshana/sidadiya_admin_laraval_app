@@ -70,6 +70,14 @@
         <button class="uk-modal-close-default" type="button" uk-close></button>
         <h2 class="uk-modal-title">Withdrawal History</h2>
 
+        {{-- Withdrawal search --}}
+        <div class="uk-margin">
+            <form class="uk-search uk-search-default">
+                <span class="uk-search-icon-flip" uk-search-icon></span>
+                <input class="uk-search-input" type="search" placeholder="Search...">
+            </form>
+        </div>
+
         <div class="uk-overflow-auto">
 
             <ul class="uk-subnav uk-subnav-pill" uk-switcher="animation: uk-animation-fade">
@@ -93,7 +101,8 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><img class="uk-border-circle uk-align-center" width="30" height="30" src="{{url('assets\logo.png')}}"></td>
+                                <td><img class="uk-border-circle uk-align-center" width="30" height="30"
+                                        src="{{url('assets\logo.png')}}"></td>
                                 <td>Harshan</td>
                                 <td>Starter 01</td>
                                 <td>Bank</td>
@@ -118,7 +127,8 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><img class="uk-border-circle uk-align-center" width="30" height="30" src="{{url('assets\logo.png')}}"></td>
+                                <td><img class="uk-border-circle uk-align-center" width="30" height="30"
+                                        src="{{url('assets\logo.png')}}"></td>
                                 <td>Harshan</td>
                                 <td>Starter 01</td>
                                 <td>Bank</td>
@@ -143,7 +153,8 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><img class="uk-border-circle uk-align-center" width="30" height="30" src="{{url('assets\logo.png')}}"></td>
+                                <td><img class="uk-border-circle uk-align-center" width="30" height="30"
+                                        src="{{url('assets\logo.png')}}"></td>
                                 <td>Praneeth</td>
                                 <td>Starter 01</td>
                                 <td>Ez cash</td>

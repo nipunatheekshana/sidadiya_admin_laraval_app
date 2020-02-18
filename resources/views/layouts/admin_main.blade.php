@@ -63,6 +63,9 @@
     {{-- Users --}}
     @yield('users')
 
+    {{-- Packages --}}
+    @yield('packages')
+
     <footer>
         <div class="uk-card uk-card-default uk-card-body uk-card-small uk-text-center">
             <span> &copy; Copyright. Sidadiya Team</span>

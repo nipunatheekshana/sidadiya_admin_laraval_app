@@ -28,3 +28,6 @@ Route::get('/notification','admincontroller@adminnotification');
 
 // Admin users
 Route::get('/users','admincontroller@users');
+
+// Admin packages
+Route::get('/packages','admincontroller@packages');

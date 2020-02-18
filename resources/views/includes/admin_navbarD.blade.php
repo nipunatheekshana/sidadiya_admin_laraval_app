@@ -43,9 +43,14 @@
             <li> <a href="{{url('/withdrawals')}}" style='text-decoration:none'><i
                         class="fas sideicons fa-coins uk-margin-small-right"></i>Withdrawals</a></li>
 
+            <li> <a href="{{url('/users')}}" style='text-decoration:none'><i
+                        class="fas sideicons fa-user uk-margin-small-right"></i>Users</a></li>
+
+            <li> <a href="{{url('/packages')}}" style='text-decoration:none'><i
+                        class="fas sideicons fa-box uk-margin-small-right"></i>Packages</a></li>
+
             <li> <a href="{{url('/notification')}}" style='text-decoration:none'><i
                         class="fas sideicons fa-bell uk-margin-small-right"></i>Notifications</a></li>
-
             <hr>
             <li> <a href="{{url('/login')}}" style='text-decoration:none'><i
                         class="fas sideicons fa-sign-out-alt uk-margin-small-right"></i>Logout</a></li>

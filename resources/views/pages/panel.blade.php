@@ -22,23 +22,23 @@
         {{-- pending posts --}}
         <div>
             <a href="{{url('/wall')}}" style="text-decoration:none">
-            <div class=" uk-card uk-card-primary uk-card-small uk-text-center uk-card-body">
-                <i class="fa fa-portrait fa-3x uk-position-center-left uk-margin-left"></i>
-                <div class="uk-text-large uk-text-light"> Pending
-                    posts</div>
-                <div class="uk-text-large uk-text-bold">3562</div>
-            </div></a>
+                <div class=" uk-card uk-card-primary uk-card-small uk-text-center uk-card-body">
+                    <i class="fa fa-portrait fa-3x uk-position-center-left uk-margin-left"></i>
+                    <div class="uk-text-large uk-text-light"> Pending
+                        posts</div>
+                    <div class="uk-text-large uk-text-bold">3562</div>
+                </div>
+            </a>
         </div>
-
         {{-- pending withdrawals --}}
         <div>
             <a href="{{url('/withdrawals')}}" style="text-decoration:none">
-            <div class=" uk-card uk-card-primary uk-card-small uk-text-center uk-card-body">
-                <i class="fa fa-coins fa-3x uk-position-center-left uk-margin-left"></i>
-                <div class="uk-text-large uk-text-light"> Pending
-                    withdrawals</div>
-                <div class="uk-text-large">Rs. <span class="uk-text-bold">34562</span></div>
-            </div>
+                <div class=" uk-card uk-card-primary uk-card-small uk-text-center uk-card-body">
+                    <i class="fa fa-coins fa-3x uk-position-center-left uk-margin-left"></i>
+                    <div class="uk-text-large uk-text-light"> Pending
+                        withdrawals</div>
+                    <div class="uk-text-large">Rs. <span class="uk-text-bold">34562</span></div>
+                </div>
             </a>
         </div>
 
@@ -53,30 +53,33 @@
         </div>
         {{-- total users --}}
         <div>
-            <div class=" uk-card uk-card-primary uk-card-small uk-text-center uk-card-body">
-                <i class="fa fa-users fa-3x uk-position-center-left uk-margin-left"></i>
-                <div class="uk-text-large uk-text-light">Total users
-                </div>
-                <div class="uk-child-width-1-2 uk-grid-small uk-text-center" uk-grid>
-                    {{-- Active --}}
-                    <div>
-                        <div>Active</div>
-                        <div class="uk-text-bold">12</div>
+            <a href="{{url('/users')}}" style="text-decoration:none">
+                <div class=" uk-card uk-card-primary uk-card-small uk-text-center uk-card-body">
+                    <i class="fa fa-users fa-3x uk-position-center-left uk-margin-left"></i>
+                    <div class="uk-text-large uk-text-light">Total users
                     </div>
-                    {{-- Free --}}
-                    <div>
-                        <div>Free</div>
-                        <div class="uk-text-bold">22</div>
+                    <div class="uk-child-width-1-2 uk-grid-small uk-text-center" uk-grid>
+                        {{-- Active --}}
+                        <div>
+                            <div>Active</div>
+                            <div class="uk-text-bold">12</div>
+                        </div>
+                        {{-- Free --}}
+                        <div>
+                            <div>Free</div>
+                            <div class="uk-text-bold">22</div>
+                        </div>
+
                     </div>
 
                 </div>
-
-            </div>
+            </a>
         </div>
 
         {{-- online --}}
         <div>
-            <div class=" uk-card uk-card-primary uk-card-small uk-text-center uk-card-body" uk-toggle='target:#onlineusers'>
+            <div class=" uk-card uk-card-primary uk-card-small uk-text-center uk-card-body"
+                uk-toggle='target:#onlineusers'>
                 <i class="fa fa-signal fa-3x uk-position-center-left uk-margin-left"></i>
                 <div class="uk-text-large uk-text-light">Total Online
                 </div>
@@ -91,7 +94,7 @@
         {{-- Line chart --}}
         <div>
             <div class="uk-card uk-card-default uk-card-body uk-card-small uk-margin-small-top">
-                <div class="uk-text-large">Daily line graph</div>
+                <div class="uk-text-large">Daily progress graph</div>
                 <canvas id="myChart" width="400" height="200"></canvas>
             </div>
         </div>
@@ -99,7 +102,7 @@
         {{-- Donut chart --}}
         <div>
             <div class="uk-card uk-card-default uk-card-body uk-card-small uk-margin-small-top">
-                <div class="uk-text-large">Daily withdrawal donut graph</div>
+                <div class="uk-text-large">Daily withdrawal graph</div>
                 <canvas id="doughnut-chart" width="400" height="200"></canvas>
             </div>
         </div>
@@ -211,7 +214,7 @@
             </thead>
             <tbody>
                 <tr>
-                <td><img class="uk-border-circle" width="40" height="40" src="{{url('assets\logo.png')}}"></td>
+                    <td><img class="uk-border-circle" width="40" height="40" src="{{url('assets\logo.png')}}"></td>
                     <td>John Doe</td>
                     <td>Starter 01</td>
                     <td><span class="uk-label uk-label-success">Online</span></td>
@@ -225,6 +228,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 
 <script>
+
     // Daily records line graph
     var lchart = document.getElementById("myChart")
         new Chart(lchart, {
@@ -254,7 +258,7 @@
     // Daily withdrawal record donut chart
     var dchart =document.getElementById("doughnut-chart")
         new Chart(dchart, {
-            type: 'doughnut',
+            type: 'pie',
             data: {
             labels: ["Pending", "Withdrawad"],
             datasets: [

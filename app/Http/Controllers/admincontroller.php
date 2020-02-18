@@ -25,4 +25,8 @@ class admincontroller extends Controller
    public function users(){
       return view('pages.users');
    }
+
+   public function packages(){
+      return view('pages.packages');
+   }
 }
