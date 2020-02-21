@@ -1,4 +1,3 @@
-{{-- Custom style --}}
 
 
 <nav class="uk-navbar-container uk-margin" uk-navbar="mode: click" style="background-color:#fff;"
@@ -34,25 +33,25 @@
         <h3>Menu</h3>
 
         <ul class="uk-margin-left uk-list">
-            <li> <a href="{{url('/')}}" style='text-decoration:none'><i
+            <li> <a href="{{url('/')}}" style='text-decoration:none' class="sidemenu"><i
                         class="fas sideicons fa-columns uk-margin-small-right"></i>Dashbord</a></li>
 
-            <li> <a href="{{url('/wall')}}" style='text-decoration:none'><i
+            <li> <a href="{{url('/wall')}}" style='text-decoration:none' class="sidemenu"><i
                         class="fas sideicons fa-clipboard-check uk-margin-small-right"></i>Post approve</a></li>
 
-            <li> <a href="{{url('/withdrawals')}}" style='text-decoration:none'><i
+            <li> <a href="{{url('/withdrawals')}}" style='text-decoration:none' class="sidemenu"><i
                         class="fas sideicons fa-coins uk-margin-small-right"></i>Withdrawals</a></li>
 
-            <li> <a href="{{url('/users')}}" style='text-decoration:none'><i
+            <li> <a href="{{url('/users')}}" style='text-decoration:none' class="sidemenu"><i
                         class="fas sideicons fa-user uk-margin-small-right"></i>Users</a></li>
 
-            <li> <a href="{{url('/packages')}}" style='text-decoration:none'><i
+            <li> <a href="{{url('/packages')}}" style='text-decoration:none' class="sidemenu"><i
                         class="fas sideicons fa-box uk-margin-small-right"></i>Packages</a></li>
 
-            <li> <a href="{{url('/notification')}}" style='text-decoration:none'><i
+            <li> <a href="{{url('/notification')}}" style='text-decoration:none' class="sidemenu"><i
                         class="fas sideicons fa-bell uk-margin-small-right"></i>Notifications</a></li>
             <hr>
-            <li> <a href="{{url('/login')}}" style='text-decoration:none'><i
+            <li> <a href="{{url('/login')}}" style='text-decoration:none' class="sidemenu"><i
                         class="fas sideicons fa-sign-out-alt uk-margin-small-right"></i>Logout</a></li>
         </ul>
 

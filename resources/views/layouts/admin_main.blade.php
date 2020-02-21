@@ -19,6 +19,9 @@
     })(); 
     </script>
 
+{{-- Custom style --}}
+<link rel="stylesheet" href="{{url('css/navbar.css')}}">
+
     {{-- iziToast --}}
     <link rel="stylesheet" href="{{url('css\iziToast.min.css')}}">
 
