@@ -16,7 +16,7 @@
         css.rel = 'stylesheet';
         css.type = 'text/css';
         document.getElementsByTagName('head')[0].appendChild(css);
-    })(); 
+        })(); 
     </script>
 
 {{-- Custom style --}}

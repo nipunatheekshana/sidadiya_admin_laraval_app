@@ -34,7 +34,7 @@
         <div class="uk-width-expand@m">
 
             <ul class="uk-subnav uk-subnav-pill" uk-switcher="animation: uk-animation-fade">
-                <li><a href="#">Active</a></li>
+                <li><a href="#">Acitve</a></li>
                 <li><a href="#">Deactive</a></li>
             </ul>
 
