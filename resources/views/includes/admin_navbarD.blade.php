@@ -17,6 +17,7 @@
                 style="padding-right:58px;padding-top:12px">12</span>
         </div>
 
+        {{-- Logout --}}
         <div class="uk-navbar-item">
             <i class="fa fa-sign-out-alt fa-1x"></i>
         </div>

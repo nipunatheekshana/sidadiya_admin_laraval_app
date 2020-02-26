@@ -76,20 +76,25 @@
                                 <td>4000</td>
                                 <td>Active</td>
                                 <td>
-
+                                    {{-- User control button --}}
                                     <button onclick="confirm()" type="submit"
-                                        class="uk-button uk-button-small uk-button-default" uk-tooltip="Deactive user">
+                                        class="uk-button uk-button-small uk-button-danger" uk-tooltip="Deactive user">
                                         <i class="fa fa-user-times"></i>
                                     </button>
 
-                                    <button uk-toggle='target:#sendmsg' type="submit" class="uk-button uk-button-small uk-button-default"
-                                        uk-tooltip="Send message">
+                                    <button uk-toggle='target:#sendmsg' type="submit"
+                                        class="uk-button uk-button-small uk-button-default" uk-tooltip="Send message">
                                         <i class="fas fa-comment-alt"></i>
                                     </button>
 
                                     <button type="submit" class="uk-button uk-button-small uk-button-default"
                                         uk-tooltip="View user">
                                         <i class="fas fa-eye"></i>
+                                    </button>
+
+                                    <button type="submit" class="uk-button uk-button-small uk-button-primary"
+                                        uk-tooltip="Edit user" uk-toggle='target:#edituser'>
+                                        <i class="fa fa-pencil-alt"></i>
                                     </button>
 
                                 </td>
@@ -130,6 +135,203 @@
             <button class="uk-button uk-button-default uk-modal-close" type="button" onclick="send()">
                 <i class="fas fa-paper-plane"></i>Send</button>
         </p>
+    </div>
+</div>
+
+{{-- Edit user --}}
+<div id="edituser" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-text-large uk-small-bottom"> <i class="fa fa-user-edit uk-margin-small-right"></i> Edit user
+        </div>
+
+        <form method="POST" action="#">
+            {{-- Wallet --}}
+            <div>
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="form-horizontal-text">Wallet</label>
+                    <div class="uk-form-controls">
+                        <div class="uk-margin">
+                            <input class="uk-input uk-form-large uk-text-cenetr" id="form-horizontal-text" type="number" step="0.01"
+                                placeholder="Title">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- Name --}}
+            <div class="uk-child-width-1-2@s" uk-grid>
+
+
+
+                {{-- Fname --}}
+                <div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">First name</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input uk-form-small" id="form-horizontal-text" type="text"
+                                placeholder="First name">
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Lname --}}
+                <div>
+                    <div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-horizontal-text">Last name</label>
+                            <div class="uk-form-controls">
+                                <input class="uk-input uk-form-small" id="form-horizontal-text" type="text"
+                                    placeholder="Last name">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Package --}}
+            <div>
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="form-horizontal-text">Package</label>
+                    <div class="uk-form-controls">
+                        <div class="uk-margin">
+                            <select class="uk-select">
+                                <option>Starter 01</option>
+                                <option>Starter 02</option>
+                                <option>Starter 03</option>
+                                <option>Starter 04</option>
+                                <option>Starter 05</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Gender --}}
+            <div>
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="form-horizontal-text">Gender</label>
+                    <div class="uk-form-controls">
+                        <div class="uk-margin">
+                            <select class="uk-select">
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Id --}}
+            <div>
+                <div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">ID</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input uk-form-small" id="form-horizontal-text" type="number"
+                                placeholder="ID">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Name --}}
+            <div>
+                <div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">Date of birth</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input uk-form-small" id="form-horizontal-text" type="date"
+                                placeholder="Last name">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Email --}}
+            <div>
+                <div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">Email</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input uk-form-small" id="form-horizontal-text" type="email"
+                                placeholder="Email">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Phone --}}
+            <div>
+                <div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">Phone</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input uk-form-small" id="form-horizontal-text" type="number"
+                                placeholder="Phone">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- NIC number--}}
+            <div>
+                <div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">NIC number</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input uk-form-small" id="form-horizontal-text" type="number"
+                                placeholder="NIC number">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Registration date --}}
+            <div>
+                <div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">Registration date</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input uk-form-small" id="form-horizontal-text" type="date"
+                                placeholder="Registration date">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- User code --}}
+            <div>
+                <div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">User code</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input uk-form-small" id="form-horizontal-text" type="text"
+                                placeholder="User code">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Sponsor code --}}
+            <div>
+                <div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">Sponsor code</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input uk-form-small" id="form-horizontal-text" type="text"
+                                placeholder="Sponsor code">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Submit buttons --}}
+            <p class="uk-text-right">
+                <button class="uk-button uk-button-danger uk-modal-close"><i class="fa fa-times-circle"></i>
+                    Cancel</button>
+                <button class="uk-button uk-button-default"><i class="fa fa-check-circle"></i> Update</button>
+            </p>
+        </form>
     </div>
 </div>
 
@@ -177,14 +379,14 @@
         iziToast.success({
             title: 'Send !',
             message:'Message has been sent',
-            position:'bottomRight',
+            position:'topRight',
         });
     }
     function discard(){
         iziToast.error({
             title: 'Discarded !',
             message:'Message discarded',
-            position:'bottomRight',
+            position:'topRight',
         });
     }
 </script>

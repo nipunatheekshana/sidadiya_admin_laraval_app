@@ -14,6 +14,7 @@
         cursor: pointer;
     }
 </style>
+
 <div class="uk-container uk-container-medium uk-margin-top uk-margin-bottom">
     <div class="uk-child-width-1-2 uk-grid-small" uk-grid='mansonry:true'>
         <div class="uk-width-1-4@m">
@@ -36,8 +37,8 @@
                 </p>
 
                 <p class="uk-text-right">
-                    <button class="uk-button uk-button-small editicons"><i class="fa fa-trash"></i></button>
-                    <button class="uk-button uk-button-small editicons" uk-toggle='target:#editnotification'><i
+                    <button class="uk-button uk-button-small uk-button-default editicons" onclick="del()"><i class="fa fa-trash"></i></button>
+                    <button class="uk-button uk-button-small uk-button-default editicons" uk-toggle='target:#editnotification'><i
                             class="fa fa-pencil-alt"></i></button>
                 </p>
                 {{-- Button --}}
@@ -100,10 +101,10 @@
         </div>
 
         <p class="uk-text-right">
-            <button class="uk-button uk-button-danger uk-modal-close" type="button" onclick="discard()">
-                <i class="fa fa-trash"></i> Discard</button>
+            <button class="uk-button uk-button-danger uk-modal-close" type="button">
+                <i class="fa fa-trash"></i> Cancel</button>
             <button class="uk-button uk-button-primary uk-modal-close" type="button" onclick="added()">
-                <i class="fa fa-plus-circle"></i>Save</button>
+                <i class="fa fa-plus-circle"></i> Save</button>
         </p>
     </div>
 </div>
@@ -111,13 +112,14 @@
 <script>
     // Tost message
     // Add notification
-      function added(){
+    function added(){
         iziToast.success({
             title: 'Added !',
             message:'Notification has been added',
             position:'bottomRight',
         });
     }
+    // Discard
     function discard(){
         iziToast.error({
             title: 'Discarded !',
@@ -133,6 +135,45 @@
             position:'bottomRight',
         });
     }
+    // Delete
+    function del(){
+            iziToast.question({
+                timeout: 0,
+                close: false,
+                overlay: true,
+                displayMode: 'once',
+                id: 'question',
+
+                zindex: 999,
+                title: 'Confirm',
+                backgroundColor:'#ffc9c9',
+                message: 'Delete notification?',
+                position: 'center',
+                buttons: [
+                    ['<button><b>YES</b></button>', function (instance, toast) {
+            
+                        instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+            
+                        iziToast.success({
+                            title: 'Done',
+                            message: 'Notification deleted',
+                        });
+
+                    }, true],
+                    ['<button>NO</button>', function (instance, toast) {
+            
+                        instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+            
+                    }],
+                ],
+                onClosing: function(instance, toast, closedBy){
+                    console.info('Closing | closedBy: ' + closedBy);
+                },
+                onClosed: function(instance, toast, closedBy){
+                    console.info('Closed | closedBy: ' + closedBy);
+                }
+            });
+        };
 </script>
 
 @endsection

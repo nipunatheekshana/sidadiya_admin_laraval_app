@@ -19,11 +19,14 @@
         })(); 
     </script>
 
-{{-- Custom style --}}
-<link rel="stylesheet" href="{{url('css/navbar.css')}}">
+    {{-- Custom style --}}
+    <link rel="stylesheet" href="{{url('css/navbar.css')}}">
 
     {{-- iziToast --}}
-    <link rel="stylesheet" href="{{url('css\iziToast.min.css')}}">
+    <link rel="stylesheet" href="{{url('css/iziToast.min.css')}}">
+
+    {{-- Navbar --}}
+    <link rel="stylesheet" href="{{url('css/navbar.css')}}">
 
     {{-- jQuery --}}
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -42,9 +45,16 @@
         color: white;
         text-align: center;
     }
+
+    @media only screen and (max-width: 960px) {
+        footer {
+            display: none;
+        }
+    }
 </style>
+
 <body>
-  
+
     {{-- Top nvabar --}}
     @include('includes.admin_navbarD')
 
@@ -69,11 +79,11 @@
     {{-- Packages --}}
     @yield('packages')
 
-    <footer>
+    {{-- <footer>
         <div class="uk-card uk-card-default uk-card-body uk-card-small uk-text-center">
             <span> &copy; Copyright. Sidadiya Team</span>
         </div>
-    </footer>
+    </footer> --}}
 
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit.min.js"></script>
@@ -84,5 +94,4 @@
     {{-- Chrt js --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 </body>
-
 </html>

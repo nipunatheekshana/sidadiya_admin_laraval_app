@@ -15,6 +15,8 @@
         cursor: pointer;
     }
 </style>
+
+{{-- Main container --}}
 <div class="uk-container uk-container-medium uk-margin-top uk-margin-bottom">
     <div class="uk-child-width-1-2@m uk-grid-small" uk-grid='mansonry:true'>
 
@@ -33,9 +35,11 @@
         {{-- Right --}}
         <div class="uk-width-expand@m">
 
+            {{-- Top tabs --}}
             <ul class="uk-subnav uk-subnav-pill" uk-switcher="animation: uk-animation-fade">
                 <li><a href="#">Acitve</a></li>
                 <li><a href="#">Deactive</a></li>
+                <li><a href="#">Pending</a></li>
             </ul>
 
             <ul class="uk-switcher uk-margin">
@@ -45,7 +49,9 @@
                     <div
                         class="uk-card uk-card-default uk-card-body uk-card-small uk-text-centcer uk-margin-small-bottom">
                         <h3 class="uk-card-title">Starter 01</h3>
+
                         <ul class="uk-list uk-margin-left">
+                            <li><span class="uk-text-primary">Req.By : </span><a href="http://">#234234</a></li>
                             <li><span class="uk-text-primary">Duration : </span>Lifetime</li>
                             <li><span class="uk-text-primary">Daily earn limit : </span>Rs.123</li>
                             <li><span class="uk-text-primary">Like : </span>Rs.0.12</li>
@@ -99,6 +105,36 @@
                             {{-- Deactivate --}}
                             <button class="uk-button uk-button-small editicons" onclick="activepkg()"><i
                                     class="far fa-check-circle"></i><br><span style="font-size:10px">Active</span>
+                            </button>
+
+                        </p>
+                        {{-- Button --}}
+                        <div></div>
+                    </div>
+                </li>
+
+                {{-- Pending --}}
+                <li>
+                    {{-- pkg 03 --}}
+                    <div
+                        class="uk-card uk-card-default uk-card-body uk-card-small uk-text-centcer uk-margin-small-bottom">
+                        <h3 class="uk-card-title">Starter 03</h3>
+                        <ul class="uk-list uk-margin-left">
+                            <li><span class="uk-text-primary">Duration : </span>Lifetime</li>
+                            <li><span class="uk-text-primary">Daily earn limit : </span>Rs.123</li>
+                            <li><span class="uk-text-primary">Like : </span>Rs.0.12</li>
+                            <li><span class="uk-text-primary">Share : </span>Rs.1.00</li>
+                            <li><span class="uk-text-primary">Post upload : </span>Rs.1.00</li>
+                        </ul>
+
+                        <p class="uk-text-right">
+                            {{-- Accept --}}
+                            <button class="uk-button uk-button-small editicons"><i
+                                    class="far fa-check-circle uk-text-success"></i><br><span style="font-size:10px">Accept</span>
+                            </button>
+                            {{-- Reject --}}
+                            <button class="uk-button uk-button-small editicons"><i
+                                    class="far fa-times-circle uk-text-danger"></i><br><span style="font-size:10px">Reject</span>
                             </button>
 
                         </p>
@@ -192,8 +228,7 @@
         </p>
     </div>
 </div>
-
-<!-- Add package -->
+<!-- Edit package -->
 <div id="editpkg" uk-modal>
     <div class="uk-modal-dialog uk-modal-body">
         <button class="uk-modal-close-default" type="button" uk-close></button>
@@ -337,6 +372,47 @@
         });
     };
  
+ //Confirm delete
+ // Delete
+ function del(){
+            iziToast.question({
+                timeout: 0,
+                close: false,
+                overlay: true,
+                displayMode: 'once',
+                id: 'question',
+
+                zindex: 999,
+                title: 'Confirm',
+                backgroundColor:'#ffc9c9',
+                message: 'Delete notification?',
+                position: 'center',
+                buttons: [
+                    ['<button><b>YES</b></button>', function (instance, toast) {
+            
+                        instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+            
+                        iziToast.success({
+                            title: 'Done',
+                            message: 'Notification deleted',
+                        });
+
+                    }, true],
+                    ['<button>NO</button>', function (instance, toast) {
+            
+                        instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+            
+                    }],
+                ],
+                onClosing: function(instance, toast, closedBy){
+                    console.info('Closing | closedBy: ' + closedBy);
+                },
+                onClosed: function(instance, toast, closedBy){
+                    console.info('Closed | closedBy: ' + closedBy);
+                }
+            });
+        };
+
  // Confirm  activate package
  function activepkg(){
         iziToast.question({

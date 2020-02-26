@@ -32,7 +32,9 @@
 
         {{-- center --}}
         <div class="uk-width-expand">
-            <div class="uk-card uk-card-default uk-card-small uk-card-body">
+
+            {{-- SAMPLE 01 --}}
+            <div class="uk-card uk-card-default uk-card-small uk-card-body uk-margin-small-bottom">
                 {{-- User details --}}
                 <div class="uk-margin-small-bottom">
                     <img class="uk-border-circle" width="40" height="40" src="{{url('assets\logo.png')}}">
@@ -69,19 +71,19 @@
                 <div class="uk-card-footer">
                     {{-- Button section --}}
                     <div class="uk-child-width-1-2@m uk-text-center" uk-grid>
-                        {{-- Reject --}}
-                        <div>
-                            <div onclick="rejected()"
-                                class="uk-button uk-width-1-1 uk-button-small@m uk-text-nowrap uk-button-danger"><i
-                                    class="fa fa-times"></i>
-                                Reject
-                            </div>
-                        </div>
                         {{-- Accept --}}
                         <div>
                             <div onclick="accepted()"
                                 class="uk-button uk-width-1-1 uk-button-small@m uk-text-nowrap uk-button-primary"><i
                                     class="fa fa-check"></i> Accept
+                            </div>
+                        </div>
+                        {{-- Reject --}}
+                        <div>
+                            <div uk-toggle='target:#reject'
+                                class="uk-button uk-width-1-1 uk-button-small@m uk-text-nowrap uk-button-danger"><i
+                                    class="fa fa-times"></i>
+                                Reject
                             </div>
                         </div>
                     </div>
@@ -98,6 +100,25 @@
 
 {{-- Popup modal section --}}
 
+{{-- Reject reason --}}
+<div id="reject" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <p class="uk-text-large uk-text-danger">Reject reason</p>
+
+        <div class="uk-margin">
+            <div class="uk-form-controls">
+                <textarea class="uk-textarea" rows="5" placeholder="Textarea"></textarea>
+            </div>
+        </div>
+
+        <p class="uk-text-right">
+            <a href="" class="uk-button uk-button-default uk-modal-close">Close</a>
+            <button type="submit" class="uk-button uk-button-danger uk-modal-close" onclick="rejected()">Reject</button>
+        </p>
+    </div>
+</div>
+
 {{-- ChartJS --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 
@@ -111,17 +132,18 @@
     // Tost message
     function accepted(){
         iziToast.success({
-            title: 'Accepted !',
-            position:'bottomRight',
+            title: 'Post Accepted !',
+            position:'topRight',
             timeout:2000
         });
     }
     function rejected(){
         iziToast.error({
-            title: 'Rejected !',
-            position:'bottomRight',
+            title: 'Post Rejected !',
+            position:'topRight',
             timeout:2000
         });
+
     }
     // Owl carousel
     $(document).ready(function(){
